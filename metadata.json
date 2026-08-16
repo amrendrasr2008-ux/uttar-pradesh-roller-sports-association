@@ -1,0 +1,6 @@
+{
+  "name": "Uttar Pradesh Roller Sports Association",
+  "description": "Official Bilingual (Hindi/English) Portal for UPRSA - Skater Registration, Digital ID Cards, Club & District Management, Tournaments, Live Scoring, Automatic Rankings, Certificates, and Verification.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

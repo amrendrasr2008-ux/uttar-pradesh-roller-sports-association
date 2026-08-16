@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@layer base {
+  /* Default text color for inputs */
+  input, select, textarea {
+    color: #0f172a;
+  }
+
+  /* Force dark text (#0f172a) on white/light inputs and white containers */
+  .bg-white input,
+  .bg-white select,
+  .bg-white textarea,
+  .bg-slate-50 input,
+  .bg-slate-50 select,
+  .bg-slate-50 textarea,
+  .bg-slate-100 input,
+  .bg-slate-100 select,
+  .bg-slate-100 textarea,
+  .bg-amber-50 input,
+  .bg-amber-50 select,
+  .bg-amber-50 textarea,
+  input.bg-white,
+  select.bg-white,
+  textarea.bg-white,
+  input.text-slate-900,
+  select.text-slate-900,
+  textarea.text-slate-900 {
+    color: #0f172a !important;
+    background-color: #ffffff;
+  }
+
+  /* Placeholder color for white/light inputs */
+  .bg-white input::placeholder,
+  .bg-slate-50 input::placeholder,
+  input.bg-white::placeholder,
+  input.text-slate-900::placeholder {
+    color: #64748b !important;
+  }
+
+  /* Only inputs directly inside dark elements (that are NOT inside a white/light card) get white text */
+  .bg-slate-900 input:not(.bg-white *):not(.bg-slate-50 *):not(.bg-amber-50 *),
+  .bg-slate-950 input:not(.bg-white *):not(.bg-slate-50 *):not(.bg-amber-50 *),
+  .bg-slate-800 input:not(.bg-white *):not(.bg-slate-50 *):not(.bg-amber-50 *) {
+    color: #f8fafc;
+  }
+}
+
