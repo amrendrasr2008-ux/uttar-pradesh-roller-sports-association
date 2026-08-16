@@ -159,7 +159,21 @@ UPRSA`;
       })
     });
 
-    const data = await response.json();
+    const rawResponse = await response.text();
+
+let data: any;
+
+try {
+  data = rawResponse ? JSON.parse(rawResponse) : {
+    success: false,
+    message: `Server returned an empty response (HTTP ${response.status})`
+  };
+} catch {
+  data = {
+    success: false,
+    message: rawResponse || `Server returned invalid JSON (HTTP ${response.status})`
+  };
+}
 
     if (data.log) {
       dbStore.addEmailLog({
